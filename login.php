@@ -9,5 +9,7 @@
 </head>
 <body>
             <h1>DUMMY LOGOUT PAGE</h1>
+
+
 </body>
 </html>
