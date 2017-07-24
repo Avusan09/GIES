@@ -1,7 +1,7 @@
 <?php
 
 @session_start();
-$dbname ="ecommerce";
+$dbname ="GIES";
 $dbusername ="carefreeav";
 $password ="root123";
 $host = "localhost";
