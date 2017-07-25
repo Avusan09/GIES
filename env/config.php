@@ -1,7 +1,7 @@
 <?php
 
 @session_start();
-$dbname ="GIES";
+$dbname ="gies";
 $dbusername ="carefreeav";
 $password ="root123";
 $host = "localhost";

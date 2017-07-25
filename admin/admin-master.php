@@ -1,3 +1,8 @@
+<?php
+    include("../env/config.php");
+   /* include("../env/usersessions.php");*/
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -43,47 +48,161 @@
 
             <div class="row" style="margin-right:0px;">
 
-                <div class="col-xs-2" style="border:1px solid #ccc;height:100vh; background: url('https://www.planwallpaper.com/static/images/abstract_color_background_picture_8016-wide.jpg');
-                      background-size: inherit;
-                      background-repeat: no-repeat;">
+                <div class="col-xs-2" style="border:1px solid #ccc;height:100vh; background:#1C2A48;">
                     <!-- Side Navigation fixed -->
-                    <div class="container">
-                    <h3 class="text-xs-center" style="margin-top:30px;color:white">Admin Panel</h3>
-                    <hr style="height:5px;color:white">
-
-                    <ul class="list-group no-box-shadow">
-                        <li class="divider"></li>
-
-                        <a href="#"><li class="list-group-item pad waves-effect waves-light"> Add Users</li></a>
-                        <a href="#"><li class="list-group-item pad waves-effect waves-light"> Add Products</li></a>
-                        <a href="#"><li class="list-group-item pad waves-effect waves-light"> Add Categories</li></a>
-                        <a href="#"><li class="list-group-item pad waves-effect waves-light"> View Users</li></a>
-                        <a href="#"><li class="list-group-item pad waves-effect waves-light"> View Products</li></a>
-                        <a href="#"><li class="list-group-item pad waves-effect waves-light"> View Carts</li></a>
-                        <a href="#"><li class="list-group-item pad waves-effect waves-light"> Checkout History</li></a>
-
-
-
-
-                    </ul>
-
-
-
-
-
-
-                </div>
+                    <?php include("admin-layout/admin-nav.php"); ?>
                 </div>
 
 
-                <div class="col-xs-10">
+                <div class="col-xs-10" style="padding: 0px;">
                   <!-- Rest of the page -->
-                    <h1>this is the rest of the page where data is shown.</h1>
+                    <div class="container-fluid" style="padding:0px">
+                    <div class="navbar-dark rgba-blue-strong" style="height: 50px" role="navigation">
 
-                    <h4>This is arranged properly thanks.</h4>
-                </div>
+                        <div class="container">
+
+                            <!--Collapse content-->
+                            <div class="collapse navbar-toggleable-xs" id="collapseEx2">
+                                <!--Navbar Brand-->
+                                <a class="navbar-brand" style="color:white">Dashboard</a>
+                                <!--Links-->
+
+                                <button href="#" class=" btn  btn-primary btn-sm btn-rounded navbar-link waves-effect waves-ripple"  style="float: right"> Contact</button>
+                                <button href="#" class=" btn btn-danger btn-sm btn-rounded navbar-link waves-effect waves-ripple"  style="float: right"> Logout</button>
+
+
+
+                                <!--/.Collapse content-->
+
+                        </div>
+
+                        </div>
+                    <!--/.Navbar-->
+                        </div>
+                    </div>
+                    <br><br>
+
+                        <!--rest of the page actually begins here-->
+                        <div class="container">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <!--no of products-->
+
+                                <div class="card card-cascade wider">
+
+                                    <!--Card image-->
+                                    <div class="view overlay hm-white-slight">
+                                        <img src="http://blog.infotrends.com/wp-content/uploads/2013/06/SamsungProducts.png" style="height: 300px;width: 100%" class="img-fluid">
+                                        <a href="#">
+                                            <div class="mask waves-effect waves-light"></div>
+                                        </a>
+                                    </div>
+                                    <!--/Card image-->
+
+                                    <!--Card content-->
+                                    <div class="card-block text-center">
+                                        <!--Title-->
+                                        <h4 class="card-title" style="text-align: center"><strong>Total Number of Products</strong></h4>
+                                        <br>
+                                        <h1 style="text-align: center">XX</h1>
+
+                                        <p class="card-text" style="text-align: center">Includes phones and Computer Parts</p>
+
+
+
+                                    </div>
+                                    <!--/.Card content-->
+
+                                </div>
+                                </div>
+
+
+                            <div class="col-md-4">
+                                <!--no of products-->
+
+                                <div class="card card-cascade wider">
+
+                                    <!--Card image-->
+                                    <div class="view overlay hm-white-slight">
+                                        <img src="https://www.or-technology.com/images/Menubilder/Medici/Medici-general.png" style="height: 300px;width: 100%" class="img-fluid">
+                                        <a href="#%21">
+                                            <div class="mask waves-effect waves-light"></div>
+                                        </a>
+                                    </div>
+                                    <!--/Card image-->
+
+                                    <!--Card content-->
+                                    <div class="card-block text-center">
+                                        <!--Title-->
+                                        <h4 class="card-title" style="text-align: center"><strong>Total  Categories</strong></h4>
+                                        <br>
+                                        <h1 style="text-align: center">XX</h1>
+
+                                        <p class="card-text" style="text-align: center">Includes categories like laptop, phones</p>
+
+
+
+                                    </div>
+                                    <!--/.Card content-->
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <!--no of products-->
+
+                                <div class="card card-cascade wider">
+
+                                    <!--Card image-->
+                                    <div class="view overlay hm-white-slight">
+                                        <img src="https://cdn0.iconfinder.com/data/icons/large-glossy-icons/512/Customers.png" style="height: 300px;width: 100%" class="img-fluid">
+                                        <a href="#">
+                                            <div class="mask waves-effect waves-light"></div>
+                                        </a>
+                                    </div>
+                                    <!--/Card image-->
+
+                                    <!--Card content-->
+                                    <div class="card-block text-center">
+                                        <!--Title-->
+                                        <h4 class="card-title" style="text-align: center"><strong>Total Number of Users</strong></h4>
+                                        <br>
+                                        <h1 style="text-align: center">
+
+                                            <?php
+
+                                                include_once("../env/config.php");
+
+                                                $userCount = "select count(*) c from user";
+
+                                                $userCountResult = mysqli_query($conn,$userCount);
+                                                $row = mysqli_fetch_assoc($userCountResult);
+                                                echo "<strong>" . $row['c'] . "</strong>";
+
+                                                /*echo $userCountResult;*/
+
+                                            ?>
+
+
+
+                                        </h1>
+
+                                        <p class="card-text" style="text-align: center">Users and their roles</p>
+
+
+
+                                    </div>
+                                    <!--/.Card content-->
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
 
               </div>
+            </div>
+
 
 
             <script src="../public/js/compiled.js"></script>

@@ -3,38 +3,6 @@ include("../env/config.php");
 /*include("../env/usersessions.php");*/
 ?>
 
-<?php
-include("../env/config.php");
-if(isset($_POST['submit']))
-{
-    $target_dir = "../public/images/users";
-    $target_file = $target_dir . basename($_FILES["uploadImage"]["name"]);
-    $uploadOk = 1;
-    $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-// Check if image file is a actual image or fake image
-    if (move_uploaded_file($_FILES["uploadImage"]["tmp_name"], $target_file)) {
-        echo "The file ". basename( $_FILES["uploadImage"]["name"]). " has been uploaded.";
-    } else {
-        echo "Sorry, there was an error uploading your file.";
-    }
-
-    $user = $_POST['username'];
-    $pass = $_POST['password'];
-    $role = $_POST['role'];
-    $email = $_POST['email'];
-    $image = $_FILES['uploadImage']['name'];
-
-    $sql="insert into user(username, password,role,email,image) value ('$user','$pass','$role','$email','$image')";
-    $result = mysqli_query($conn,$sql);
-
-    if($result){
-        header("Location: admin-master.php");
-    }
-
-}
-
-?>
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -42,7 +10,7 @@ if(isset($_POST['submit']))
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Admin | Add Users</title>
+    <title>Admin Dashboard</title>
 
     <link rel="stylesheet" href="../public/css/bootstrap.min.css">
     <link rel="stylesheet" href="../public/css/compiled.css">
@@ -82,7 +50,7 @@ if(isset($_POST['submit']))
 
     <div class="col-xs-2" style="border:1px solid #ccc;height:100vh; background:#1C2A48;">
         <!-- Side Navigation fixed -->
-        <?php require_once('admin-layout/admin-nav.php');?>
+        <?php include("admin-layout/admin-nav.php"); ?>
         <!-- End of side Navigation       -->
     </div>
 
@@ -113,59 +81,53 @@ if(isset($_POST['submit']))
                 <!--/.Navbar-->
             </div>
         </div>
-        <br>
+        <br><br>
 
         <!--rest of the page actually begins here-->
-        <div class="container" style="padding:0 200px 0 200px">
+        <div class="container">
 
             <h1 style="text-align: center">Add Users Forms </h1>
 
-            <form action="" method="post" enctype="multipart/form-data">
+            <form method="POST" action="addUserProcessing.php" enctype="multipart/form-data">
 
                 <div class="md-form form-group">
                     <i class="fa fa-envelope prefix"></i>
-                    <input type="text" id="form91" name="username" class="form-control validate" required>
-                    <label for="form91" data-error="wrong" data-success="right">UserName</label>
-                </div>
-
-
-                <div class="md-form form-group">
-                    <i class="fa fa-lock prefix"></i>
-                    <input type="password" id="form92" name="password" class="form-control validate" required>
-                    <label for="form92" data-error="wrong" data-success="right" >Password</label>
-                </div>
-
-
-                <label for="sel1" class="md-form form-group" style="margin-left: 50px">Select Role:</label>
-                <select class="form-control" id="sel1" name="role" style="margin-left: 50px;width: 95%">
-                    <option value="Super Admin">SuperAdmin</option>
-                    <option value="Admin">Admin</option>
-                    <option value="User">User</option>
-                </select>
-
-                <div class="md-form form-group">
-                    <i class="fa fa-envelope prefix"></i>
-                    <input type="email" id="form91" name="email" class="form-control validate" required>
+                    <input type="email" id="form91" name="email" class="form-control validate">
                     <label for="form91" data-error="wrong" data-success="right">Email Address</label>
                 </div>
 
-                <div class="file-field">
-                    <div class="btn btn-outline-primary btn-sm" style="margin-left: 45px">
-                        <span>Choose Image to upload</span>
-                        <input type="file" name="uploadImage">
-                    </div>
-                    <div class="file-path-wrapper">
-                        <input class="file-path validate" type="text" placeholder="Upload your file" width="95%">
-                    </div>
+                <div class="md-form form-group">
+                    <i class="fa fa-envelope prefix"></i>
+                    <input type="text" id="form91" name="username" class="form-control validate">
+                    <label for="form91" data-error="wrong" data-success="right">UserName</label>
                 </div>
 
-                <br><br>
-                <div class="md-form form-group" style="margin-left: 15px" >
-                    <input type="submit" class="btn btn-outline-success btn-xs btn-block" name="submit" value="Submit Information" style="width: 95%">
+                <div class="md-form form-group">
+                    <i class="fa fa-lock prefix"></i>
+                    <input type="password" id="form92" name="password" class="form-control validate">
+                    <label for="form92" data-error="wrong" data-success="right" >Password</label>
                 </div>
+
+                <label for="sel1" class="md-form form-group" style="margin-left: 50px">Select Role:</label>
+                <select class="form-control" id="sel1" name="role" style="margin-left: 50px;width: 95%">
+                    <option value="sa">SuperAdmin</option>
+                    <option value="ad">Admin</option>
+                    <option value="user">User</option>
+                </select>
+
+                <div class="md-form form-group" style="margin-left: 45px" >
+                    <a href="" class="btn btn-primary btn-sm" name="submit">Submit</a>
+                </div>
+
+                <!--<script>
+                    function myFunction() {
+
+                        alert("Form Submitted successfully");
+
+                    }
+                </script>-->
+
             </form>
-
-
 
             <!-- rest of the page ends here-->
         </div>
