@@ -7,7 +7,7 @@ include("../env/config.php");
 include("../env/config.php");
 if(isset($_POST['submit']))
 {
-    $target_dir = "../public/images/users";
+    $target_dir = "../public/images/users/";
     $target_file = $target_dir . basename($_FILES["uploadImage"]["name"]);
     $uploadOk = 1;
     $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
@@ -80,14 +80,15 @@ if(isset($_POST['submit']))
 
 <div class="row" style="margin-right:0px;">
 
-    <div class="col-xs-2" style="border:1px solid #ccc;height:100vh; background:#1C2A48;">
-        <!-- Side Navigation fixed -->
-        <?php require_once('admin-layout/admin-nav.php');?>
-        <!-- End of side Navigation       -->
-    </div>
 
 
-    <div class="col-xs-10" style="padding: 0px;">
+        <div class="col-xs-2" style="border:1px solid #ccc;height:100vh; background-image:url('../../gies/public/admin.png');background-size: 100% 100%">
+            <!-- Side Navigation fixed -->
+            <?php include("admin-layout/admin-nav.php"); ?>
+        </div>
+
+
+    <div class="col-xs-10" style="padding: 0px;background-color: #3E4551;color:white;height: 100vh">
         <!-- Rest of the page -->
         <div class="container-fluid" style="padding:0px">
             <div class="navbar-dark rgba-blue-strong" style="height: 50px" role="navigation">
@@ -116,7 +117,7 @@ if(isset($_POST['submit']))
         <br>
 
         <!--rest of the page actually begins here-->
-        <div class="container" style="padding:0 200px 0 200px">
+        <div class="container" style="padding:0 200px 0 200px;">
 
             <h1 style="text-align: center">Add Users Forms </h1>
 
@@ -125,19 +126,19 @@ if(isset($_POST['submit']))
                 <div class="md-form form-group">
                     <i class="fa fa-envelope prefix"></i>
                     <input type="text" id="form91" name="username" class="form-control validate" required>
-                    <label for="form91" data-error="wrong" data-success="right">UserName</label>
+                    <label for="form91" data-error="wrong" data-success="right" style="color:white">UserName</label>
                 </div>
 
 
                 <div class="md-form form-group">
                     <i class="fa fa-lock prefix"></i>
                     <input type="password" id="form92" name="password" class="form-control validate" required>
-                    <label for="form92" data-error="wrong" data-success="right" >Password</label>
+                    <label for="form92" data-error="wrong" data-success="right" style="color:white">Password</label>
                 </div>
 
 
                 <label for="sel1" class="md-form form-group" style="margin-left: 50px">Select Role:</label>
-                <select class="form-control" id="sel1" name="role" style="margin-left: 50px;width: 95%">
+                <select class="form-control" id="sel1" name="role" style="margin-left: 50px;width: 95%;color: white;background-color:#3E4551">
                     <option value="Super Admin">SuperAdmin</option>
                     <option value="Admin">Admin</option>
                     <option value="User">User</option>
@@ -146,22 +147,22 @@ if(isset($_POST['submit']))
                 <div class="md-form form-group">
                     <i class="fa fa-envelope prefix"></i>
                     <input type="email" id="form91" name="email" class="form-control validate" required>
-                    <label for="form91" data-error="wrong" data-success="right">Email Address</label>
+                    <label for="form91" data-error="wrong" data-success="right" style="color:white">Email Address</label>
                 </div>
 
                 <div class="file-field">
                     <div class="btn btn-outline-primary btn-sm" style="margin-left: 45px">
-                        <span>Choose Image to upload</span>
+                        <span style="color: white;">Choose Image to upload</span>
                         <input type="file" name="uploadImage">
                     </div>
                     <div class="file-path-wrapper">
-                        <input class="file-path validate" type="text" placeholder="Upload your file" width="95%">
+                        <input class="file-path validate" style="color: white" type="text" placeholder="Upload your file" width="95%">
                     </div>
                 </div>
 
                 <br><br>
                 <div class="md-form form-group" style="margin-left: 15px" >
-                    <input type="submit" class="btn btn-outline-success btn-xs btn-block" name="submit" value="Submit Information" style="width: 95%">
+                    <input type="submit" style="color: white" class="btn btn-primary btn-xs btn-block" name="submit" value="Submit Information" style="width: 95%">
                 </div>
             </form>
 

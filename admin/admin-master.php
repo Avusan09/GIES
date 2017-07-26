@@ -27,6 +27,7 @@
         margin-top: 20px;
         background-color: transparent;
         color:white;
+          font-size: 150%;
 
       }
 
@@ -48,7 +49,7 @@
 
             <div class="row" style="margin-right:0px;">
 
-                <div class="col-xs-2" style="border:1px solid #ccc;height:100vh; background:#1C2A48;">
+                <div class="col-xs-2" style="border:1px solid #ccc;height:100vh; background-image:url('../../gies/public/admin.png');background-size: 100% 100%">
                     <!-- Side Navigation fixed -->
                     <?php include("admin-layout/admin-nav.php"); ?>
                 </div>
@@ -68,7 +69,17 @@
                                 <!--Links-->
 
                                 <button href="#" class=" btn  btn-primary btn-sm btn-rounded navbar-link waves-effect waves-ripple"  style="float: right"> Contact</button>
-                                <button href="#" class=" btn btn-danger btn-sm btn-rounded navbar-link waves-effect waves-ripple"  style="float: right"> Logout</button>
+                                <button href="#" class=" btn btn-danger btn-sm btn-rounded navbar-link waves-effect waves-ripple"  style="float: right">
+                                    <?php
+                                    if( $_SESSION != null) { ?>
+                                        <li><a href="../../gies/logout.php">Logout</a></li>
+                                    <?php }
+                                    ?>
+                                    <?php
+                                    if( $_SESSION == null) { ?>
+                                        <li><a href="../../gies/login.php">Login</a></li>
+                                    <?php } ?>
+                                </button>
 
 
 
@@ -156,7 +167,7 @@
                                     <!--Card image-->
                                     <div class="view overlay hm-white-slight">
                                         <img src="https://cdn0.iconfinder.com/data/icons/large-glossy-icons/512/Customers.png" style="height: 300px;width: 100%" class="img-fluid">
-                                        <a href="#">
+                                        <a href="../../gies/admin/viewUsers.php">
                                             <div class="mask waves-effect waves-light"></div>
                                         </a>
                                     </div>

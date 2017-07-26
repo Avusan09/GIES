@@ -1,3 +1,10 @@
+<?php
+session_start();
+session_destroy();
+header("Location:../../gies/index.php");
+?>
+
+
 <!doctype html>
 <html lang="en">
 <head>

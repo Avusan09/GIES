@@ -8,6 +8,23 @@
     <title>Document</title>
 </head>
 <body>
-        This is a blank HTML page.
+<?php
+    include ("env/config.php");
+
+?>
+
+HI THIS IS THE INDEX PAGE. AS YOU CAN SEE ITS NOT BUILT YET.
+
+but login and logout functions work i think
+
+<?php
+if( $_SESSION != null) { ?>
+    <li><a href="logout.php">Logout</a></li>
+<?php }
+?>
+<?php
+if( $_SESSION == null) { ?>
+    <li><a href="login.php">Login</a></li>
+<?php } ?>
 </body>
 </html>
